@@ -1,0 +1,69 @@
+
+version: 2
+
+models:
+  - name: activity_bronze
+    description: "Activities table bronze"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: calories_out
+        description: "Total calories burned."
+
+      - name: activity_calories
+        description: "Calories burned during activities."
+
+      - name: calories_bmr
+        description: "Basal Metabolic Rate (BMR) calories."
+
+      - name: active_score
+        description: "Score representing the overall activity level."
+
+      - name: steps
+        description: "Total steps taken."
+
+      - name: sedentary_minutes
+        description: "Total minutes spent being sedentary."
+
+      - name: lightly_active_minutes
+        description: "Total minutes spent in light activity."
+
+      - name: fairly_active_minutes
+        description: "Total minutes spent in moderate activity."
+
+      - name: very_active_minutes
+        description: "Total minutes spent in vigorous activity."
+
+      - name: marginal_calories
+        description: "Additional calories burned beyond resting state."
+
+      - name: resting_heart_rate
+        description: "Resting heart rate in beats per minute (bpm)."
+
+      - name: load_date
+        description: "Date the record was loaded into the table."
+        tests:
+          - not_null
+
+      - name: row_num
+        description: "Row number for ranking or tracking purposes."
+
+      - name: activity_duration
+        description: "Duration of activities, in milliseconds."
+
+      - name: activity_steps
+        description: "Steps recorded during activities."
+
+  - name: sleep_bronze
+    description: "Sleep table bronze"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
