@@ -1,0 +1,13 @@
+sleep:
+  outputs:
+    dev:
+      dbname: fitbit
+      host: sleeptracking-postgres-1
+      pass: password
+      port: 5432
+      schema: fitbit
+      threads: 1
+      type: postgres
+      user: fitbit
+  target: dev
+
