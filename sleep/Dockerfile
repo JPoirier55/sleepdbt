@@ -5,14 +5,18 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Install dependencies
+RUN apt-get update && apt-get install -y git
 RUN pip install --upgrade pip
 RUN pip install dbt-core dbt-postgres
 
-# Copy the dbt project into the container
-COPY . .
 
 # Expose ports if needed for dbt docs
 EXPOSE 8888
 
-# Default command (override in docker-compose.yml if needed)
-CMD ["dbt", "--version"]
+COPY entrypoint.sh /app/entrypoint.sh
+
+# Ensure the script is executable
+RUN chmod +x /app/entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/app/entrypoint.sh"]
