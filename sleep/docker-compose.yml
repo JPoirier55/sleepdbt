@@ -6,9 +6,17 @@ services:
       context: . # Directory containing the Dockerfile
     container_name: dbt-container
     working_dir: /app
+    networks:
+      - shared_network
     volumes:
       - .:/app # Mount the current directory into the container
     environment:
       DBT_PROFILES_DIR: /app/profiles # Set the dbt profiles directory (adjust as needed)
     command: tail -f /dev/null
     restart: unless-stopped
+
+networks:
+  shared_network:
+    name: shared_network
+    external: true
+    driver: bridge

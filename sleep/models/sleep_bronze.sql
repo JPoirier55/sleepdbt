@@ -94,5 +94,5 @@ select
     sm.total_time_in_bed
 from ranked_entries sd
 left join summary_data sm
-on sd.id = .id
+on sd.id = sm.id
 where row_num = 1
