@@ -67,3 +67,7 @@ models:
           - unique
           - not_null
 
+  - name: daily_stats_silver
+    description: "Combined table of sleep, activity and manual data"
+
+        

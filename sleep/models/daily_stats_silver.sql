@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 select 
     s.date_of_sleep as date,
     s.awakenings_count, 
