@@ -1,10 +1,8 @@
 select 
     s.date_of_sleep as date,
     s.awakenings_count, 
-    s.total_minutes_asleep, 
     TO_CHAR(s.start_time::TIMESTAMP, 'HH24:MI:SS') as bed_time,
     TO_CHAR(s.end_time::TIMESTAMP, 'HH24:MI:SS') as awake_time,
-    s.awakenings_count,
     s.total_minutes_asleep,
     s.total_time_in_bed,
     s.efficiency,
